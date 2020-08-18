@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Traviso.js - Example 6 - Single Ground Image</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #000000;
+                overflow: hidden;
+            }
+         
+        </style>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/easing/EasePack.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
+        <script src="../js/pixi.js"></script>
+        <script src="../js/traviso.dev.js"></script>
+        <link rel="stylesheet" href="../../../css/main.css">
+        <link rel="stylesheet" href="../../../js/main.js">
+    </head>
+
+    
+    <body onload="temporizador();">
+<div class="menulateralADL flexverticalADL">
+    <div class="tooltipADL" onclick="tiplogia1();">
+    <img class="imagenmenulateral" src="../../../img/escudo.png"><span class="tooltiptextADL" >Tiplogia 1</span>
+    </div>
+    <div class="tooltipADL disabled" onclick="tiplogia2();">
+    <img class="imagenmenulateral" src="../../../img/huella.png"><span class="tooltiptextADL" >Tiplogia 2</span>
+    </div>
+    <div class="tooltipADL disabled" onclick="tiplogia3();">
+    <img class="imagenmenulateral" src="../../../img/documento.png"><span class="tooltiptextADL" >Tiplogia 3</span>
+    </div>
+    <div class="tooltipADL disabled" onclick="tiplogia4();">
+    <img class="imagenmenulateral" src="../../../img/cosa-rara.png"><span class="tooltiptextADL" >Tiplogia 4</span>
+    </div>
+    <div class="tooltipADL disabled" onclick="tipologia5();">
+    <img class="imagenmenulateral" src="../../../img/impresion.png"><span class="tooltiptextADL">Tiplogia 5</span>
+    </div>
+    <div class="tooltipADL disabled" onclick="cerrartipologias();">
+    <img class="imagenmenulateral" src="../../../img/dinero.png"><span class="tooltiptextADL">Cerrar tipologías</span>
+    </div>
+    <div class="tooltipADL disabled" onclick="parent.slide4();">
+    <img class="imagenmenulateral" src="../../../img/ubicacion.png"><span class="tooltiptextADL" >Ir al html 4</span>
+    </div>
+</div>
+
+<div class="campanaADL "  style="display: none;">
+    <div class="tooltipADL">
+    <img class="imagenmenulateral" src="../../../img/campana.png"><span class="tooltiptextADL" style="top: 14px;
+    left: -128%;">Acción g</span>
+    </div>
+    <div class="numerocampanaALD">1</div>
+</div>
+
+<!-- TIPOLOGÍA CONVERSACIÓN -->
+<div id="tiplogia1" class="cajafancyADL flexverticalADL" style="display: none; overflow: auto;">
+    
+    <div class="flexhorizontalADL scale-in-hor-left">
+        <p class="textointernofancymoradoADL">  
+            Disculpa, buen día. Soy X. Soy un usuario nuevo 
+            y estoy buscando información sobre la Gestión de 
+            Riesgos. No quiero molestar, pero me causa 
+            mucha curiosidad verte aquí, en las otras empresas 
+            en las que he visitado no es común ver a alguien como 
+            tú vigilando a los empleados de la intranet.
+             ¿Puedo preguntar... por qué es necesario vigilarlos? </p> 
+        <img src="../../../img/visto.png">        
+     </div>
+
+    <div class="flexhorizontalADL scale-in-hor-left" style="animation-delay: 2s">
+        <img src="../../../img/personaje-redondo.png">
+        <p class="textointernofancyADL"> 
+            Hola, sí me dijeron que vendrías. Pues bien,
+             mi nombre es Tobor2. Soy la encargada de SARO 
+             (Sistema de Administración de Riesgo Operativo). 
+             Hace poco nos enteramos de que una mujer estaba 
+             inventando algunas cosas sobre la empresa y pensaba 
+             ir con la prensa para divulgar esa información falsa. </p> 
+
+     </div>
+
+     <div class="flexhorizontalADL scale-in-hor-left" style="animation-delay: 4s">
+        <p class="textointernofancymoradoADL">  
+            Oh, sí, me encontré con Tobor1 
+            hace unos minutos y me contó un 
+            poco sobre eso… pero no entiendo 
+             ¿SARO se encarga de… los chismes?
+        </p> 
+        <img src="../../../img/visto.png">        
+     </div>
+
+
+     <div class="flexhorizontalADL scale-in-hor-left" style="animation-delay: 6s">
+        <img src="../../../img/personaje-redondo.png">
+        <p class="textointernofancyADL"> 
+             Ja, ja, ja... No. SARO busca apoyar 
+            el logro de la compañía corporativa ADL 
+            a través de la gestión efectiva y eficiente 
+            de los riesgos a los que se ve expuesta en 
+            el desarrollo de sus operaciones, creando valor
+             para sus grupos de interés. Con esta situación 
+             que se ha presentado, estamos llevando a cabo nuestro
+              plan de Gestión de Riesgos ya que cualquier cosa podría pasar.  </p> 
+
+     </div>
+     <div class="flexhorizontalADL scale-in-hor-left" style="animation-delay: 8s">
+        <p class="textointernofancymoradoADL"> 
+            ¿Y por eso es necesario vigilar a los trabajadores?
+        </p> 
+        <img src="../../../img/visto.png">        
+     </div>
+
+     <div class="flexhorizontalADL scale-in-hor-left" style="animation-delay: 10s">
+        <img src="../../../img/personaje-redondo.png">
+        <p class="textointernofancyADL"> 
+            En este momento sí, ellos no saben cómo gestionar
+             los riesgos así que estoy aquí para cumplir con la 
+             intención de SARO, que es mitigar todo tipo de riesgo
+              para dar mayor protección a nuestros clientes,
+               proveedores y a nuestra reputación como empresa 
+               de servicios. Como no estamos seguros del todo 
+               sobre qué quería decir esta mujer,
+                debemos asegurarnos de que este riesgo 
+                no se convierta en una realidad.   </p> 
+
+     </div>
+     <div class="flexhorizontalADL scale-in-hor-left" style="animation-delay: 12s">
+        <p class="textointernofancymoradoADL"> 
+             Ohh, ya entiendo. Pero, cómo hace SARO para gestionar los riesgos. 
+        </p> 
+        <img src="../../../img/visto.png">        
+     </div>
+
+     <div id="btn-financiero" class="flexhorizontalADL scale-in-hor-left" style="animation-delay: 14s">
+        <p class="textointernofancyADL">Siguiente </p> 
+        <img class="boton" src="../../../img/enviar.png" onclick="parent.slide4()">        
+     </div>
+
+</div>
+
+
+
+<!-- TIPOLOGÍA PALABRAS -->
+<div id="tiplogia2" class="cajafancyADL flexverticalADL" style="display: none;" >
+
+    <video id="videocayendo1" class="videoADL" src="../../../video/palabras-cayendo.mp4" onclick='playVid();' onended="preguntavideocayendo1();" ></video>
+        <div id="preguntavideocayendo1" class="flexverticalADL" style="width: 90%;display: none;">
+                    <p class="textopalabrasADL textomoradoADL" style="background-color: grey"> Opción 1 </p>      
+                    <p class="textopalabrasADL textomoradoADL" style="background-color: grey"> Opción 2 </p>            
+        </div>
+</div>
+
+
+<!-- TIPOLOGÍA BIEN O MAL -->
+<div id="tiplogia3" class="cajafancyADL flexverticalADL" style="display: none;" >
+    <div class="flexhorizontalADLsino">
+        <img src="../../../img/pregunta.png"><p>FCPA Es la Ley de Prácticas Corruptas en el extranjero.</p> 
+     </div>
+
+     <div class="flexhorizontalADL">
+        <img class="boton" src="../../../img/bien.png">
+        <img class="boton" src="../../../img/mal.png">        
+     </div>
+</div>
+
+<!-- TIPOLOGÍA AUDIOL -->
+<div id="tiplogia4" class="cajafancyADL flexverticalADL" style="background-color: #EDE8F9;display: none" >
+    <div class="flexhorizontalADL">
+        <div style="position: absolute;width: 50%;height: 100%;background-color: white;border-radius: 25px;left: 0">
+            <div class="flexverticalADL" style="background-color: white;border-radius: 25px;height: 90%;width: 90%;">
+            <img src="../../../img/personaje-redondo.png"> 
+            <p class="textomoradoADL">Nombre</p>
+            <div class="flexhorizontalADL">
+                <img class="boton" src="../../../img/pause.png"> 
+                <img class="boton" src="../../../img/play.png"> 
+            </div>
+        </div> 
+        </div>
+
+        <div class="flexverticalADL" style="position: absolute;width: 50%;height: 100%;background-color: transparent;border-radius: 25px;left: 50%">
+            <div class="flexverticalADL">
+            <p class="textomoradoADL">Definición</p>
+            <div class="flexverticalADL" style="width: 90%;">
+                <p class="textopalabrasADL textomoradoADL" style="background-color: white"> Opción 1 </p>      
+                <p class="textopalabrasADL textomoradoADL" style="background-color: white"> Opción 2 </p>            
+            </div>
+            </div>
+        </div>
+</div>
+</div>
+
+<div id="tipologia5" class="cajafancyADL flexverticalADL" style="display: none;" onload="$(this).text('Hello world in Div using text()');">
+  <div class="flexverticalADL" style="background-image: url(../../../img/fondo-nave.gif);height: 100%;width: 52%;color: white" onload="temporizador();">
+        Pregunta aquí
+        
+    </div>
+
+        <div id="preguntavideocayendo1" class="flexhorizontalADL" style="width: 90%;position: absolute;
+    bottom: 9%;" onload="hello()">
+                    <p class="textopalabrasADL textomoradoADL" style="background-color: #2098d16e;color: white" onclick="myFunction();"> Levantar nave </p>      
+                    <p class="textopalabrasADL textomoradoADL" style="background-color: #2098d16e;color: white" onclick="temporizador();"> Activar cronometro </p>
+  
+                        <progress class="verticalADL" value="0" max="10" id="progressBar">hola</progress>
+                        <div id="countdown" class="temporizadoADL"></div>
+
+                                
+        </div>
+        <img id="nave" class="cosa"  src="../../../img/nave.png" style="position: absolute;">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script type="text/javascript">
+            function alarma(){
+                tiplogia1();
+               // parent.slide4();
+                }
+
+        </script>
+        <script>
+
+    ////// Here, we initialize the pixi application
+    var pixiRoot = new PIXI.Application(1930, 1080, { backgroundColor : 0xE8EDEE  });
+
+    // add the renderer view element to the DOM
+    document.body.appendChild(pixiRoot.view);
+    
+    ////// Here, we create our traviso instance and add on top of pixi
+    
+    // engine-instance configuration object
+    var instanceConfig =
+    {
+        mapDataPath : "mapData.json", // the path to the json file that defines map data, required
+        assetsToLoad : ["../assets/assets_map.json", "../assets/assets_characters.json", "../assets/groundImage.jpg"], // array of paths to the assets that are desired to be loaded by traviso, no need to use if assets are already loaded to PIXI cache, default null
+        
+        initialZoomLevel : -0.1,
+        
+        checkPathOnEachTile : false,
+        
+        engineInstanceReadyCallback : onEngineInstanceReady, // callback function that will be called once everything is loaded and engine instance is ready, default null
+        tileSelectCallback : onTileSelect, // callback function that will be called when a tile is selected (call params will be the row and column indexes of the tile selected), default null
+        objectSelectCallback : onObjectSelect, // callback function that will be called when a tile with an interactive map-object on it is selected (call param will be the object selected), default null
+        objectReachedDestinationCallback : onObjectReachedDestination, // callback function that will be called when any moving object reaches its destination (call param will be the moving object itself), default null
+        otherObjectsOnTheNextTileCallback : onOtherObjectsOnTheNextTile // callback function that will be called when any moving object is in move and there are other objects on the next tile (call params will be the moving object and an array of objects on the next tile), default null
+    };
+
+    var engine = TRAVISO.getEngineInstance(instanceConfig, { logEnabled: true });
+    
+    
+    // this method will be called when the engine is ready
+    function onEngineInstanceReady()
+    {
+        pixiRoot.stage.addChild(engine);
+    }
+    
+    // this method will be called everytime a tile is selected in the engine
+    function onTileSelect(rowIndex, columnIndex)
+    {
+            
+    }
+    
+    // this method will be called when a tile with an interactive map-object on it is selected
+    function onObjectSelect(obj)
+    {
+        engine.moveCurrentControllableToLocation(obj.mapPos);
+    }
+    
+    // this method will be called when any moving object reaches its destination
+    function onObjectReachedDestination(obj)
+    {
+        var objectsOnDestination = engine.getObjectsAtLocation(obj.mapPos);
+        for (var i=0; i < objectsOnDestination.length; i++)
+        {
+            // check if there is a flag on the destination tile
+            if(objectsOnDestination[i].type === 10)
+            {
+                obj.changeVisual("flip", false, true, flipAnimFinished);
+                break;
+            }
+        }
+    }
+    
+    // this method will be called when the custom flip anim finished
+    function flipAnimFinished (obj)
+    {
+        // change the visual of the object so that it will face its last direction
+        obj.changeVisualToDirection(obj.currentDirection, false);
+    }
+    
+    // this method will be called when any moving object is in move and there are other objects on the next tile
+    function onOtherObjectsOnTheNextTile(movingObject, objectsOnNewTile)
+    {
+        var boxAnim;
+        for (var i=0; i < objectsOnNewTile.length; i++)
+        {
+            // check if there are boxes on the next tile
+            if(objectsOnNewTile[i].type === 12)
+            {   alarma();
+                boxAnim = createAndStartBoxAnim();
+                engine.addCustomObjectToLocation(boxAnim, objectsOnNewTile[i].mapPos);
+                engine.removeObjectFromLocation(objectsOnNewTile[i]);
+            }
+        }
+    }
+    
+    // creates 6 boxes and spreads them up throuh a simple tween animation
+    function createAndStartBoxAnim()
+    {
+        // create six seperate boxes to spread
+        var boxAnim = new PIXI.Container();
+        var t = PIXI.Texture.fromFrame("box.png");
+        var box;
+        var boxes = [];
+        for (var i=0; i < 6; i++)
+        {
+            box = new PIXI.extras.AnimatedSprite([t]);
+            box.anchor.x = box.anchor.y = 0.5;
+            boxAnim.addChild(box);
+            boxes[boxes.length] = box;
+        }
+        
+        // play a simple spread anim for the boxes
+        var boxTargets = [[-75, -125], [-50, -100], [-25, -75], [25, -75], [50, -100], [75, -125]];
+        for (var i=0; i < boxes.length; i++)
+        {
+            TweenLite.to( boxes[i].position, 0.5, { x: boxTargets[i][0], y: boxTargets[i][1], ease:"Back.easeOut" } );
+            TweenLite.to( boxes[i], 0.7, { alpha: 0 } );
+        }
+        
+        return boxAnim;
+    }
+
+        </script>
+    </body>
+</html>
+
+<script type="text/javascript">
+        function tiplogia1(){
+        document.getElementById("tiplogia1").style.display = "block";
+        }
+        function tiplogia2(){
+        document.getElementById("tiplogia2").style.display = "flex";
+        }
+        function tiplogia3(){
+        document.getElementById("tiplogia3").style.display = "flex";
+        }
+        function tiplogia4(){
+        document.getElementById("tiplogia4").style.display = "flex";
+        }
+        function tipologia5(){
+        document.getElementById("tipologia5").style.display = "flex";
+        }
+        function cerrartipologias(){
+        document.getElementById("tiplogia1").style.display = "none";
+        document.getElementById("tiplogia2").style.display = "none";
+        document.getElementById("tiplogia3").style.display = "none";
+        document.getElementById("tiplogia4").style.display = "none";
+        document.getElementById("tipologia5").style.display = "none";
+        }
+
+</script>
+<script type="text/javascript">
+    function enviarmensaje(){
+        alert("Respuesta enviada");
+    }
+</script>
+
+<!-- videos -->
+
+<script type="text/javascript">
+    var vid = document.getElementById("videocayendo1");
+
+function playVid() {
+    vid.play();
+}
+
+function pauseVid() {
+    vid.pause();
+}
+</script>
+
+<script type="text/javascript">
+    function preguntavideocayendo1(){
+        document.getElementById("videocayendo1").style.display = "none";
+        document.getElementById("preguntavideocayendo1").style.display = "flex";
+    }
+</script>
+
+
+
+<script>
+function myFunction() {
+  document.getElementById("nave").style.animationName = "myNEWmove";
+  setTimeout(function(){ document.getElementById("nave").style.animationName = "mymove";; }, 50 );
+}
+</script>
+
+<!-- CONTADOR -->
+
+<script type="text/javascript">   
+function temporizador(){
+    var timeleft = 10;
+var downloadTimer = setInterval(function(){
+  if(timeleft <= 0){
+    //alert("Has perdido");
+    clearInterval(downloadTimer);
+  }
+  else {
+    document.getElementById("countdown").innerHTML =  timeleft + " Segundos";
+  }
+  document.getElementById("progressBar").value = 10 - timeleft;
+  timeleft -= 1;
+}, 1000);
+} 
+</script>
+

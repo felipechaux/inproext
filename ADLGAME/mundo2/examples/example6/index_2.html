@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Traviso.js - Example 6 - Single Ground Image</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #000000;
+                overflow: hidden;
+            }
+        </style>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/easing/EasePack.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
+        <script src="../js/pixi.js"></script>
+        <script src="../js/traviso.dev.js"></script>
+        <link rel="stylesheet" href="../../../css/main.css">
+        <link rel="stylesheet" href="../../../js/main.js">
+    </head>
+
+    
+    <body onload="temporizador();">
+        <div class="menulateralADL flexverticalADL">
+            <div class="tooltipADL" onclick="tiplogia1();">
+            <img class="imagenmenulateral" src="../../../img/escudo.png"><span class="tooltiptextADL" >Tiplogia 1</span>
+            </div>
+            <div class="tooltipADL disabled" onclick="tiplogia2();">
+            <img class="imagenmenulateral" src="../../../img/huella.png"><span class="tooltiptextADL" >Tiplogia 2</span>
+            </div>
+            <div class="tooltipADL disabled" onclick="tiplogia3();">
+            <img class="imagenmenulateral" src="../../../img/documento.png"><span class="tooltiptextADL" >Tiplogia 3</span>
+            </div>
+            <div class="tooltipADL disabled" onclick="tiplogia4();">
+            <img class="imagenmenulateral" src="../../../img/cosa-rara.png"><span class="tooltiptextADL" >Tiplogia 4</span>
+            </div>
+            <div class="tooltipADL disabled" onclick="tipologia5();">
+            <img class="imagenmenulateral" src="../../../img/impresion.png"><span class="tooltiptextADL">Tiplogia 5</span>
+            </div>
+            <div class="tooltipADL disabled" onclick="cerrartipologias();">
+            <img class="imagenmenulateral" src="../../../img/dinero.png"><span class="tooltiptextADL">Cerrar tipologías</span>
+            </div>
+            <div class="tooltipADL disabled" onclick="parent.slide4();">
+            <img class="imagenmenulateral" src="../../../img/ubicacion.png"><span class="tooltiptextADL" >Ir al html 4</span>
+            </div>
+        </div>
+
+<div class="campanaADL "  style="display: none;">
+    <div class="tooltipADL">
+    <img class="imagenmenulateral" src="../../../img/campana.png"><span class="tooltiptextADL" style="top: 14px;
+    left: -128%;">Acción g</span>
+    </div>
+    <div class="numerocampanaALD">1</div>
+</div>
+
+<!-- TIPOLOGÍA CONVERSACIÓN -->
+<div id="tiplogia1" class="cajafancyADL flexverticalADL" style="display: none;">
+    <div class="flexhorizontalADL">
+        <img src="../../../img/personaje-redondo.png"><p class="textointernofancyADL"> ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p> 
+
+     </div>
+     <div class="flexhorizontalADL">
+        <p class="textointernofancymoradoADL"> ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p> 
+        <img src="../../../img/visto.png">        
+     </div>
+     <div class="flexhorizontalADL">
+        <img src="../../../img/personaje-redondo.png"><p class="textointernofancyADL"> ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p> 
+
+     </div>
+     <div class="flexhorizontalADL">
+        <p class="textointernofancymoradoADL"> ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p> 
+        <img src="../../../img/visto.png">        
+     </div>
+     <div class="flexhorizontalADL">
+        <p class="textointernofancymoradoADL">ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod </p> 
+        <img class="boton" src="../../../img/enviar.png" onclick="enviarmensaje();">        
+     </div>
+</div>
+
+<!-- TIPOLOGÍA PALABRAS -->
+<div id="tiplogia2" class="cajafancyADL flexverticalADL" style="display: none;" >
+
+    <video id="videocayendo1" class="videoADL" src="../../../video/palabras-cayendo.mp4" onclick='playVid();' onended="preguntavideocayendo1();" ></video>
+        <div id="preguntavideocayendo1" class="flexverticalADL" style="width: 90%;display: none;">
+                    <p class="textopalabrasADL textomoradoADL" style="background-color: grey"> Opción 1 </p>      
+                    <p class="textopalabrasADL textomoradoADL" style="background-color: grey"> Opción 2 </p>            
+        </div>
+</div>
+
+
+<!-- TIPOLOGÍA BIEN O MAL -->
+<div id="tiplogia3" class="cajafancyADL flexverticalADL" style="display: none;" >
+    
+    <div id="inicioGameSiNo">
+        <div class="flexhorizontalADLsino">
+            <img src="../../../img/pregunta.png">
+            <p id="inicio"> Selecciona sí o no si la
+                palabra resaltada
+                corresponde
+                correctamente a cada
+                uno de los factores de la
+                etapa de identificación. </p> 
+
+        </div>
+        <br></br>
+        <br></br>
+        <br></br>
+        <div class="flexhorizontalADL">
+            <p class="textointernofancymoradoADL">Siguiente </p> 
+            <img class="boton" src="../../../img/enviar.png" onclick="inicioGameSiNo();">        
+        </div>
+     </div>
+
+
+     <div id="factor1" style="display: none;">
+       
+        <div class="flexhorizontalADLsino">
+             <img src="../../../img/pregunta.png">
+             <p>Factor 1: Conocer los objetivos del negocio y de tu proceso. </p> 
+        </div>
+         <br></br>
+         <br></br>
+ 
+         <div class="flexhorizontalADL">
+            <img class="boton" src="../../../img/bien.png" onclick="respuestaf1Si()">
+            <img class="boton" src="../../../img/mal.png" onclick="respuestaf1No()">
+         </div>
+
+      </div>
+
+
+     <div id="factor1ok" style="display: none;">
+       
+        <div class="flexhorizontalADLsino">
+            <img src="../../../img/win4.png">
+            <p > 
+                ¡Muy bien!
+                Has ganado </p> 
+
+        </div>
+        <div class="flexhorizontalADL">
+            <p class="textointernofancymoradoADL boton" onclick="factor2()">Siguiente </p> 
+        </div>
+      
+    </div>
+     
+
+     <div id="factor1no" style="display: none;">
+       
+        <div class="flexhorizontalADLsino">
+            <img src="../../../img/joda.png">
+            <p> “Si correctamente realizar la etapa de identificación quieres, conocer los objetivos del negocio de tu proceso debes”. </p> 
+        </div>
+        <div class="flexverticalADL"">
+            <p class="textointernofancymoradoADL boton" onclick="factor2()">Siguiente </p> 
+        </div>
+    
+     </div>
+
+
+     <div id="factor2" style="display: none;">
+       
+       <div class="flexhorizontalADLsino">
+            <img src="../../../img/pregunta.png">
+            <p> Factor 2: Contar el inventario de riesgos de proceso. </p> 
+        </div>
+        <br></br>
+        <br></br>
+
+        <div class="flexhorizontalADL">
+           <img class="boton" src="../../../img/bien.png" onclick="respuestaf2Si()">
+           <img class="boton" src="../../../img/mal.png" onclick="respuestaf2No()">
+        </div>
+
+     </div>
+
+     <div id="factor2ok" style="display: none;">
+       
+        <div class="flexhorizontalADLsino">
+            <img src="../../../img/win4.png">
+            <p> 
+                ¡Muy bien!
+                Has ganado </p> 
+
+        </div>
+        <div class="flexverticalADL">
+            <p class="textointernofancymoradoADL boton" onclick="factor3()">Siguiente </p> 
+        </div>
+      
+    </div>
+     
+
+     <div id="factor2no" style="display: none;">
+       
+        <div class="flexhorizontalADLsino">
+            <img src="../../../img/rick.png">
+            <p > “No lo sé, Rick, parece falso, deberías consultar el inventario”.  </p> 
+        </div>
+        <div class="flexverticalADL">
+            <p class="textointernofancymoradoADL boton" onclick="factor3()">Siguiente </p> 
+        </div>
+    
+     </div>
+
+
+
+     <div id="factor3" style="display: none;">
+       
+        <div class="flexhorizontalADLsino">
+             <img src="../../../img/pregunta.png">
+             <p> Factor 3: Crear la base de eventos de riesgo materializado. </p> 
+         </div>
+         <br></br>
+         <br></br>
+ 
+         <div class="flexhorizontalADL">
+            <img class="boton" src="../../../img/bien.png" onclick="respuestaf3Si()">
+            <img class="boton" src="../../../img/mal.png" onclick="respuestaf3No()">
+         </div>
+ 
+      </div>
+
+
+      <div id="factor3ok" style="display: none;">
+       
+        <div class="flexhorizontalADLsino">
+            <img src="../../../img/win4.png">
+            <p> 
+                ¡Muy bien!
+                Has ganado </p> 
+
+        </div>
+        <div class="flexhorizontalADL">
+            <p class="textointernofancymoradoADL boton" onclick="factor4()">Siguiente </p> 
+        </div>
+      
+    </div>
+     
+
+     <div id="factor3no" style="display: none;">
+       
+        <div class="flexhorizontalADLsino">
+            <img src="../../../img/rick.png">
+            <p> “No lo sé, Rick, parece falso, deberías consultar la base de eventos de riesgo materializado”.  </p> 
+        </div>
+        <div class="flexverticalADL">
+            <p class="textointernofancymoradoADL boton" onclick="factor4()">Siguiente </p> 
+        </div>
+    
+     </div>
+
+
+     <div id="factor4" style="display: none;">
+       
+        <div class="flexhorizontalADLsino">
+             <img src="../../../img/pregunta.png">
+             <p> Factor 4: Contar con los procedimientos y diagramas de tu proceso. </p> 
+         </div>
+         <br></br>
+         <br></br>
+ 
+         <div class="flexhorizontalADL">
+            <img class="boton" src="../../../img/bien.png" onclick="respuestaf4Si()">
+            <img class="boton" src="../../../img/mal.png" onclick="respuestaf4No()">
+         </div>
+ 
+      </div>
+
+      <div id="factor4ok" style="display: none;">
+       
+        <div class="flexhorizontalADLsino">
+            <img src="../../../img/win4.png">
+            <p> 
+                ¡Muy bien!
+                Has ganado </p> 
+
+        </div>
+        <div class="flexhorizontalADL">
+            <p class="textointernofancymoradoADL boton" onclick="parent.slide4()" >Continuar </p> 
+        </div>
+      
+    </div>
+     
+     <div id="factor4no" style="display: none;">
+       
+        <div class="flexhorizontalADLsino">
+            <img src="../../../img/mrbean.png">
+            <p> “Así que aún no cuentas con los procedimientos y diagramas de tu proceso al día”.  </p> 
+        </div>
+        <div class="flexverticalADL">
+            <p class="textointernofancymoradoADL boton" onclick="parent.slide4()" >Continuar </p> 
+        </div>
+    
+     </div>
+
+
+</div>
+
+<!-- TIPOLOGÍA AUDIOL -->
+<div id="tiplogia4" class="cajafancyADL flexverticalADL" style="background-color: #EDE8F9;display: none" >
+    <div class="flexhorizontalADL">
+        <div style="position: absolute;width: 50%;height: 100%;background-color: white;border-radius: 25px;left: 0">
+            <div class="flexverticalADL" style="background-color: white;border-radius: 25px;height: 90%;width: 90%;">
+            <img src="../../../img/personaje-redondo.png"> 
+            <p class="textomoradoADL">Nombre</p>
+            <div class="flexhorizontalADL">
+                <img class="boton" src="../../../img/pause.png"> 
+                <img class="boton" src="../../../img/play.png"> 
+            </div>
+        </div> 
+        </div>
+
+        <div class="flexverticalADL" style="position: absolute;width: 50%;height: 100%;background-color: transparent;border-radius: 25px;left: 50%">
+            <div class="flexverticalADL">
+            <p class="textomoradoADL">Definición</p>
+            <div class="flexverticalADL" style="width: 90%;">
+                <p class="textopalabrasADL textomoradoADL" style="background-color: white"> Opción 1 </p>      
+                <p class="textopalabrasADL textomoradoADL" style="background-color: white"> Opción 2 </p>            
+            </div>
+            </div>
+        </div>
+</div>
+</div>
+
+<div id="tipologia5" class="cajafancyADL flexverticalADL" style="display: none;" onload="$(this).text('Hello world in Div using text()');">
+  <div class="flexverticalADL" style="background-image: url(../../../img/fondo-nave.gif);height: 100%;width: 52%;color: white" onload="temporizador();">
+        Pregunta aquí
+        
+    </div>
+
+        <div id="preguntavideocayendo1" class="flexhorizontalADL" style="width: 90%;position: absolute;
+    bottom: 9%;" onload="hello()">
+                    <p class="textopalabrasADL textomoradoADL" style="background-color: #2098d16e;color: white" onclick="myFunction();"> Levantar nave </p>      
+                    <p class="textopalabrasADL textomoradoADL" style="background-color: #2098d16e;color: white" onclick="temporizador();"> Activar cronometro </p>
+  
+                        <progress class="verticalADL" value="0" max="10" id="progressBar">hola</progress>
+                        <div id="countdown" class="temporizadoADL"></div>
+
+                                
+        </div>
+        <img id="nave" class="cosa"  src="../../../img/nave.png" style="position: absolute;">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script type="text/javascript">
+            function alarma(){
+                tiplogia3();
+                }
+
+        </script>
+        <script>
+
+    ////// Here, we initialize the pixi application
+    var pixiRoot = new PIXI.Application(1930, 1080, { backgroundColor : 0xE8EDEE  });
+
+    // add the renderer view element to the DOM
+    document.body.appendChild(pixiRoot.view);
+    
+    ////// Here, we create our traviso instance and add on top of pixi
+    
+    // engine-instance configuration object
+    var instanceConfig =
+    {
+        mapDataPath : "mapData_2.json", // the path to the json file that defines map data, required
+        assetsToLoad : ["../assets/assets_map.json", "../assets/assets_characters.json", "../assets/groundImage.jpg"], // array of paths to the assets that are desired to be loaded by traviso, no need to use if assets are already loaded to PIXI cache, default null
+        
+        initialZoomLevel : -0.1,
+        
+        checkPathOnEachTile : false,
+        
+        engineInstanceReadyCallback : onEngineInstanceReady, // callback function that will be called once everything is loaded and engine instance is ready, default null
+        tileSelectCallback : onTileSelect, // callback function that will be called when a tile is selected (call params will be the row and column indexes of the tile selected), default null
+        objectSelectCallback : onObjectSelect, // callback function that will be called when a tile with an interactive map-object on it is selected (call param will be the object selected), default null
+        objectReachedDestinationCallback : onObjectReachedDestination, // callback function that will be called when any moving object reaches its destination (call param will be the moving object itself), default null
+        otherObjectsOnTheNextTileCallback : onOtherObjectsOnTheNextTile // callback function that will be called when any moving object is in move and there are other objects on the next tile (call params will be the moving object and an array of objects on the next tile), default null
+    };
+
+    var engine = TRAVISO.getEngineInstance(instanceConfig, { logEnabled: true });
+    
+    
+    // this method will be called when the engine is ready
+    function onEngineInstanceReady()
+    {
+        pixiRoot.stage.addChild(engine);
+    }
+    
+    // this method will be called everytime a tile is selected in the engine
+    function onTileSelect(rowIndex, columnIndex)
+    {
+            
+    }
+    
+    // this method will be called when a tile with an interactive map-object on it is selected
+    function onObjectSelect(obj)
+    {
+        engine.moveCurrentControllableToLocation(obj.mapPos);
+    }
+    
+    // this method will be called when any moving object reaches its destination
+    function onObjectReachedDestination(obj)
+    {
+        var objectsOnDestination = engine.getObjectsAtLocation(obj.mapPos);
+        for (var i=0; i < objectsOnDestination.length; i++)
+        {
+            // check if there is a flag on the destination tile
+            if(objectsOnDestination[i].type === 10)
+            {
+                obj.changeVisual("flip", false, true, flipAnimFinished);
+                break;
+            }
+        }
+    }
+    
+    // this method will be called when the custom flip anim finished
+    function flipAnimFinished (obj)
+    {
+        // change the visual of the object so that it will face its last direction
+        obj.changeVisualToDirection(obj.currentDirection, false);
+    }
+    
+    // this method will be called when any moving object is in move and there are other objects on the next tile
+    function onOtherObjectsOnTheNextTile(movingObject, objectsOnNewTile)
+    {
+        var boxAnim;
+        for (var i=0; i < objectsOnNewTile.length; i++)
+        {
+            // check if there are boxes on the next tile
+            if(objectsOnNewTile[i].type === 12)
+            {   alarma();
+                boxAnim = createAndStartBoxAnim();
+                engine.addCustomObjectToLocation(boxAnim, objectsOnNewTile[i].mapPos);
+                engine.removeObjectFromLocation(objectsOnNewTile[i]);
+            }
+        }
+    }
+    
+    // creates 6 boxes and spreads them up throuh a simple tween animation
+    function createAndStartBoxAnim()
+    {
+        // create six seperate boxes to spread
+        var boxAnim = new PIXI.Container();
+        var t = PIXI.Texture.fromFrame("box.png");
+        var box;
+        var boxes = [];
+        for (var i=0; i < 6; i++)
+        {
+            box = new PIXI.extras.AnimatedSprite([t]);
+            box.anchor.x = box.anchor.y = 0.5;
+            boxAnim.addChild(box);
+            boxes[boxes.length] = box;
+        }
+        
+        // play a simple spread anim for the boxes
+        var boxTargets = [[-75, -125], [-50, -100], [-25, -75], [25, -75], [50, -100], [75, -125]];
+        for (var i=0; i < boxes.length; i++)
+        {
+            TweenLite.to( boxes[i].position, 0.5, { x: boxTargets[i][0], y: boxTargets[i][1], ease:"Back.easeOut" } );
+            TweenLite.to( boxes[i], 0.7, { alpha: 0 } );
+        }
+        
+        return boxAnim;
+    }
+
+        </script>
+    </body>
+</html>
+
+<script type="text/javascript">
+        function tiplogia1(){
+        document.getElementById("tiplogia1").style.display = "block";
+        }
+        function tiplogia2(){
+        document.getElementById("tiplogia2").style.display = "flex";
+        }
+        function tiplogia3(){
+        document.getElementById("tiplogia3").style.display = "flex";
+        }
+
+        function tiplogia4(){
+        document.getElementById("tiplogia4").style.display = "flex";
+        }
+        function tipologia5(){
+        document.getElementById("tipologia5").style.display = "flex";
+        }
+        function cerrartipologias(){
+        document.getElementById("tiplogia1").style.display = "none";
+        document.getElementById("tiplogia2").style.display = "none";
+        document.getElementById("tiplogia3").style.display = "none";
+        document.getElementById("tiplogia4").style.display = "none";
+        document.getElementById("tiplogia5").style.display = "none";
+        }
+
+        function inicioGameSiNo(){
+            document.getElementById("inicioGameSiNo").style.display = "none";
+            document.getElementById("factor1").style.display = "block";
+
+        }
+
+       function respuestaf1Si(){
+        document.getElementById("factor1").style.display = "none";
+        document.getElementById("factor1ok").style.display = "flex";
+
+       }
+       function respuestaf1No(){
+        document.getElementById("factor1").style.display = "none";
+        document.getElementById("factor1no").style.display = "flex";
+        }
+
+        function factor2(){
+            document.getElementById("factor1no").style.display = "none";
+            document.getElementById("factor1ok").style.display = "none";
+            document.getElementById("factor2").style.display = "block";
+        }
+
+        function respuestaf2Si(){
+           document.getElementById("factor2").style.display = "none";
+           document.getElementById("factor2no").style.display = "flex";
+          
+       }
+       function respuestaf2No(){
+           document.getElementById("factor2").style.display = "none";
+           document.getElementById("factor2ok").style.display = "flex";
+        }
+
+        function factor3(){
+            document.getElementById("factor2no").style.display = "none";
+            document.getElementById("factor2ok").style.display = "none";
+            document.getElementById("factor3").style.display = "block";
+        }
+
+        function respuestaf3Si(){
+           document.getElementById("factor3").style.display = "none";
+           document.getElementById("factor3no").style.display = "flex";
+          
+       }
+       function respuestaf3No(){
+           document.getElementById("factor3").style.display = "none";
+           document.getElementById("factor3ok").style.display = "flex";
+        }
+
+        function factor4(){
+            document.getElementById("factor3no").style.display = "none";
+            document.getElementById("factor3ok").style.display = "none";
+            document.getElementById("factor4").style.display = "block";
+        }
+
+        function respuestaf4Si(){
+           document.getElementById("factor4").style.display = "none";
+           document.getElementById("factor4ok").style.display = "flex";
+
+       }
+       function respuestaf4No(){
+           document.getElementById("factor4").style.display = "none";
+           document.getElementById("factor4no").style.display = "flex";
+
+        }
+
+</script>
+<script type="text/javascript">
+    function enviarmensaje(){
+        alert("Respuesta enviada");
+    }
+</script>
+
+<!-- videos -->
+
+<script type="text/javascript">
+    var vid = document.getElementById("videocayendo1");
+
+function playVid() {
+    vid.play();
+}
+
+function pauseVid() {
+    vid.pause();
+}
+</script>
+
+<script type="text/javascript">
+    function preguntavideocayendo1(){
+        document.getElementById("videocayendo1").style.display = "none";
+        document.getElementById("preguntavideocayendo1").style.display = "flex";
+    }
+</script>
+
+
+
+<script>
+function myFunction() {
+  document.getElementById("nave").style.animationName = "myNEWmove";
+  setTimeout(function(){ document.getElementById("nave").style.animationName = "mymove";; }, 50 );
+}
+</script>
+
+<!-- CONTADOR -->
+
+<script type="text/javascript">   
+function temporizador(){
+    var timeleft = 10;
+var downloadTimer = setInterval(function(){
+  if(timeleft <= 0){
+   // alert("Has perdido");
+    clearInterval(downloadTimer);
+  }
+  else {
+    document.getElementById("countdown").innerHTML =  timeleft + " Segundos";
+  }
+  document.getElementById("progressBar").value = 10 - timeleft;
+  timeleft -= 1;
+}, 1000);
+} 
+</script>
+
